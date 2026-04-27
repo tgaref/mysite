@@ -3,53 +3,73 @@
 <hr>
 </div>
 
-<div class="columns is-variable is-3">
+<div class="columns is-variable is-8">
   <div class="column is-one-quarter">
-    <div class="avatar">
-      <img src="{{{prefix}}}/content/static/Theo-Garefalakis.jpg" alt="Theodoulos Garefalakis" />
+    <div class="sticky-sidebar">
+      <div class="avatar">
+        <img src="{{{prefix}}}/content/static/Theo-Garefalakis.jpg" alt="Theodoulos Garefalakis" />
+      </div>
+      
+      <ul class="contact-list">
+        <li>
+          <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+          <div class="contact-content">
+            <a href="mailto:tgaref@uoc.gr">tgaref@uoc.gr</a>
+          </div>
+        </li>
+        <li>
+          <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+          <div class="contact-content">
+            Dept. of Mathematics,<br>
+            University of Crete
+          </div>
+        </li>
+        <li>
+          <span class="icon"><i class="fa-regular fa-building"></i></span>
+          <div class="contact-content">Office Γ216</div>
+        </li>
+        <li>
+          <span class="icon"><i class="fa-solid fa-phone"></i></span>
+          <div class="contact-content">(+30) 2810 393845</div>
+        </li>
+      </ul>
+      <a href="content/static/bio-english.pdf" class="button is-dark is-fullwidth mt-5">
+        <span class="icon"><i class="fa-solid fa-file-pdf"></i></span>
+        <span>Download CV</span>
+      </a>
     </div>
   </div>
+
   <div class="column">
-    <p>
-    I am a professor at the <a href="http://math.uoc.gr/el/">Department of Mathematics and Applied Mathematics</a> of the <a href="http://www.uoc.gr/">University of Crete</a>. My research interests include theoretical and algorithmic aspects of finite fields, cryptography, coding theory and combinatorics. Here is a <a href="content/static/bio-english.pdf">short CV</a>.
-    </p>
-    
-    <p class="section-title mt-4"> Contact Details </p>
-    <div class="table-container">
-    <table class="is-narrow">
-      <tr><td><span class="section-subtitle">Email:&nbsp;</span></td>
-	<td><a href="mailto:tgaref@uoc.gr">tgaref@uoc.gr</a> / <a href="mailto:tgaref@gmail.com">tgaref@gmail.com</a></td></tr>
-
-      <tr><td><span class="section-subtitle">Address:&nbsp;</span></td>
-	<td> Department of Mathematics &amp; Applied Mathematics,</td></tr>
-      <tr><td> </td> <td>University of Crete, 70013 Heraklion, Geece </td></tr>
-
-      <tr><td><span class="section-subtitle">Office:&nbsp;</span></td><td> Γ216</td></tr>
-
-      <tr><td><span class="section-subtitle">Phone:&nbsp;</span></td> <td> (+30) 2810 393845</td></tr>
-    </table>
+    <div class="content mb-6">
+      <p class="is-size-5">
+        I am a professor at the <a href="http://math.uoc.gr/el/">Department of Mathematics and Applied Mathematics</a> of the <a href="http://www.uoc.gr/">University of Crete</a>. 
+      </p>
+      <p>
+        My research interests include theoretical and algorithmic aspects of finite fields, cryptography, coding theory and combinatorics.
+      </p>
     </div>
-  </div>
-</div>
 
-<div class="box">
-  <div class="section-title"> <i id=icon class="fa fa-address-card"></i> Academic Positions </div>
-  <div class="table-container">
-  <table class="is-narrow">
-    {{#positions}}
-    <tr> <td><span class="section-subtitle">{{ time }}:&nbsp;</span></td><td> {{ pos }}</td></tr>
-    {{/positions}}
-  </table>
-  </div>
-</div>
+    <div class="box">
+      <div class="section-title"> <i id=icon class="fa-solid fa-briefcase"></i> Academic Positions </div>
+      <div class="table-container">
+      <table class="is-narrow">
+        {{#positions}}
+        <tr> <td><span class="section-subtitle">{{ time }}:&nbsp;</span></td><td> {{ pos }}</td></tr>
+        {{/positions}}
+      </table>
+      </div>
+    </div>
 
-<div class="box">
-  <div class="section-title"> <i id=icon class="fa fa-graduation-cap"></i> Education </div>
-  <div class="table-container">
-  <table class="is-narrow">
-    {{#education}}
-    <tr> <td><span class="section-subtitle">{{ time }}:&nbsp;</span></td><td> {{ pos }}</td></tr>
-    {{/education}}
-  </table>
+    <div class="box">
+      <div class="section-title"> <i id=icon class="fa-solid fa-graduation-cap"></i> Education </div>
+      <div class="table-container">
+      <table class="is-narrow">
+        {{#education}}
+        <tr> <td><span class="section-subtitle">{{ time }}:&nbsp;</span></td><td> {{ pos }}</td></tr>
+        {{/education}}
+      </table>
+      </div>
+    </div>
   </div>
 </div>
