@@ -1,36 +1,38 @@
 :root {
     --bg-primary: #ffffff;
-    --bg-secondary: #fafafa;
-    --bg-navbar: rgba(255, 255, 255, 0.8);
+    --bg-secondary: #f8fafc; /* Slate 50 */
+    --bg-navbar: rgba(255, 255, 255, 0.9);
     --box-bg-color: #ffffff;
-    --text-primary: #0f172a; /* Slate 900 */
+    --text-primary: #1e293b; /* Slate 800 */
     --text-secondary: #475569; /* Slate 600 */
-    --text-muted: #94a3b8; /* Slate 400 */
-    --accent: #0f172a;
-    --accent-hover: #334155;
+    --text-muted: #64748b; /* Slate 500 */
+    --accent: #1e3a8a; /* Academic Blue */
+    --accent-hover: #1e40af; /* Brighter Blue */
     --border: #e2e8f0; /* Slate 200 */
     --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --tab-active: #0f172a;
-    --tab-bg: #f8fafc;
+    --tab-active: #1e3a8a;
+    --tab-bg: #f1f5f9;
+    --tab-accent: #1e3a8a;
     color-scheme: light;
 }
+
 [data-theme="dark"] {
-    --bg-primary: #0f172a; /* Slate 900 - Lighter and more sophisticated */
-    --bg-secondary: #020617; /* Slate 950 - For the footer and dark sections */
-    --bg-navbar: rgba(15, 23, 42, 0.8);
-    --box-bg-color: #1e293b; /* Slate 800 - Good contrast for boxes */
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #64748b;
-    --accent: #f8fafc;
-    --accent-hover: #e2e8f0;
-    --border: #334155; /* Slate 700 - Subtler borders */
+    --bg-primary: #0f172a; /* Slate 900 */
+    --bg-secondary: #020617; /* Slate 950 */
+    --bg-navbar: rgba(15, 23, 42, 0.9);
+    --box-bg-color: #1e293b; /* Slate 800 */
+    --text-primary: #f1f5f9; /* Slate 100 */
+    --text-secondary: #cbd5e1; /* Slate 300 */
+    --text-muted: #94a3b8; /* Slate 400 */
+    --accent: #60a5fa; /* Blue 400 */
+    --accent-hover: #93c5fd; /* Blue 300 */
+    --border: #334155; /* Slate 700 */
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
-    --tab-active: #f8fafc;
+    --tab-active: #f1f5f9;
     --tab-bg: #1e293b;
-    --tab-active-bg: #1e293b;
-    --tab-accent: #f8fafc;
+    --tab-active-bg: #334155;
+    --tab-accent: #60a5fa;
     color-scheme: dark;
 }
 html {
@@ -51,6 +53,18 @@ body {
     max-width: 1140px !important;
     margin: 0 auto;
     padding: 100px 1.5rem 4rem;
+}
+
+/* Ensure navbar container matches main content alignment */
+.navbar > .container {
+    max-width: 1140px !important;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+/* Remove default padding from the first item to align it perfectly with the text edge */
+.navbar-brand .navbar-item:first-child {
+    padding-left: 0;
 }
 /* Typography Overhaul */
 h1, h2, h3, h4, h5, h6,
@@ -109,8 +123,14 @@ td:first-child {
 .brand-logo {
     font-family: 'Inter', sans-serif;
     font-weight: 700 !important;
-    font-size: 1.25rem !important;
-    letter-spacing: -0.03em;
+    font-size: 1.1rem !important;
+    letter-spacing: -0.02em;
+    text-decoration: none !important;
+}
+
+.brand-logo:hover {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
 }
 
 .nav-link {
@@ -119,6 +139,7 @@ td:first-child {
     color: var(--text-secondary) !important;
     transition: all 0.2s ease;
     position: relative;
+    text-decoration: none !important;
 }
 
 .nav-link::after {
@@ -138,18 +159,23 @@ td:first-child {
     background: transparent !important;
 }
 
-.nav-link:hover::after {
-    transform: scaleX(1);
+.nav-link.is-active {
+    font-weight: 800 !important;
+    color: var(--text-primary) !important;
+    background-color: transparent !important;
 }
 
 .social-icon {
     color: var(--text-muted) !important;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
 }
 
 .social-icon:hover {
-    color: var(--text-primary) !important;
+    color: var(--accent) !important;
     background: transparent !important;
+    transform: translateY(-2px);
+    display: inline-block;
 }
 
 /* UI Elements */
@@ -219,11 +245,11 @@ td:first-child {
 table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 0.5rem;
+    border-spacing: 0 0.25rem;
 }
 
 td {
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
     vertical-align: top;
 }
 
@@ -233,7 +259,7 @@ td {
 
 .content table td, .content table th {
     border-bottom: 1px solid var(--border);
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
 }
 
 /* Publication Styling */
@@ -340,7 +366,7 @@ footer {
 }
 
 a {
-    color: var(--text-primary);
+    color: var(--accent);
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
@@ -349,8 +375,8 @@ a {
 }
 
 a:hover {
-    color: var(--text-secondary);
-    text-decoration-color: var(--text-secondary);
+    color: var(--accent-hover);
+    text-decoration-color: var(--accent-hover);
 }
 
 .button.is-ghost {

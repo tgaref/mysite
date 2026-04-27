@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Theodoulos Garefalakis
 positions: 
    - {time: "2019 - now", pos: "Professor, Department of Mathematics and Applied Mathematics, University of Crete"}
    - {time: "2013 - 2019", pos: "Associate Professor, Department of Mathematics and Applied Mathematics, University of Crete"}
