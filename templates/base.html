@@ -28,30 +28,43 @@
 
 
 <body>
-  <div class="container">
-    <nav class="navbar is-transparent" role="navigation">
-      <div class="navbar-brand">
-      	<a href="{{{prefix}}}/" class="navbar-item">TG</a>
-      </div>
-      <div class="navbar-menu">
-	<div class="navbar-start">
-	    <a class="navbar-item" href="https://orcid.org/0000-0002-3764-7874" title="ORCID" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-orcid"></i></a>
-	    <a class="navbar-item" href="https://www.researchgate.net/profile/Theodoulos-Garefalakis/" title="ResearchGate" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
-	    <a class="navbar-item" href="https://scholar.google.com/citations?user=O5CqgoUAAAAJ&hl=en" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-google-scholar"></i></a>	    
-	</div>
+  <div class="container" x-data="{ open: false }">
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="{{{prefix}}}/" class="navbar-item">TG</a>
 
-	<div class="navbar-end">
-	  <a class="navbar-item" href="{{{prefix}}}/">Home</a>
-	  <a class="navbar-item" href="{{{prefix}}}/content/teaching/">Teaching</a>
-	  <a class="navbar-item" href="{{{prefix}}}/content/research/">Research</a>
-	  <a class="navbar-item" href="{{{prefix}}}/content/activities/">Activities</a>
-	  <button id="theme-toggle" aria-label="Toggle theme">
-	    <span id="theme-icon"></span>
-	  </button>
-	</div>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" 
+             :class="{ 'is-active': open }" @click="open = !open">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="navbar-menu" :class="{ 'is-active': open }">
+          <div class="navbar-start">
+              <a class="navbar-item" href="https://orcid.org/0000-0002-3764-7874" title="ORCID" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-orcid"></i></a>
+              <a class="navbar-item" href="https://www.researchgate.net/profile/Theodoulos-Garefalakis/" title="ResearchGate" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
+              <a class="navbar-item" href="https://scholar.google.com/citations?user=O5CqgoUAAAAJ&hl=en" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-google-scholar"></i></a>	    
+          </div>
+
+          <div class="navbar-end">
+            <a class="navbar-item" href="{{{prefix}}}/">Home</a>
+            <a class="navbar-item" href="{{{prefix}}}/content/teaching/">Teaching</a>
+            <a class="navbar-item" href="{{{prefix}}}/content/research/">Research</a>
+            <a class="navbar-item" href="{{{prefix}}}/content/activities/">Activities</a>
+            <div class="navbar-item">
+              <button id="theme-toggle" aria-label="Toggle theme">
+                <span id="theme-icon"></span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
-    <br> <br>
+    <br class="is-hidden-mobile">
     {{{ content }}}
   </div>
 
